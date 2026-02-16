@@ -1,57 +1,71 @@
-Hogwarts Management System (C Project)
-A comprehensive school management system inspired by the world of Harry Potter, developed in C. This system manages students, houses, magic wands, brooms, and spells, featuring interactive game mechanics and memory-efficient data storage.
+# ⚡ Hogwarts Management System
+### *A memory-efficient C implementation of the Wizarding World*
 
-🛠 Features
-1. School Management
-Hogwarts Core: Manages 4 houses (Gryffindor, Hufflepuff, Ravenclaw, Slytherin), courses, and spell catalogs.
+![C](https://img.shields.io/badge/Language-C-blue.svg)
+![Status](https://img.shields.io/badge/Status-Final_School_Project-green.svg)
+![Platform](https://img.shields.io/badge/Platform-Windows_/_Linux-lightgrey.svg)
 
-Sorting Hat: Automatically assigns new students to houses.
 
-House Leadership: Dynamically elects the "Head of House" based on the student with the highest credit points.
 
-2. Student & Academic Tracking
-Progress System: Students accumulate credits from courses to advance through 6 academic years.
+## 📖 Overview
+This project is a CLI-based management system for **Hogwarts School of Witchcraft and Wizardry**. Developed as a final school project by **Daniel and Iris**, it handles complex relationships between students, magical artifacts, and academic progress using **dynamic memory allocation** and **bit-level optimization**.
 
-Prerequisites: Spells have minimum year requirements based on student level.
+---
 
-Sorting & Searching: Students can be sorted and searched by credits, wand ID, name length, or year.
+## 🛠 Architecture & Features
 
-3. Interactive Mechanics
-Spell Duels: A 3-round battle system between students using spell power, difficulty, and a randomized "mastery" factor.
+### 🏰 The School (Hogwarts)
+* **House System:** Manages the four houses: 🦁 **Gryffindor**, 🐍 **Slytherin**, 🦡 **Hufflepuff**, and 🦅 **Ravenclaw**.
+* **Sorting Hat:** Automatically assigns students to houses upon enrollment.
+* **Academic Tracking:** Students advance through 6 years based on credit points. Promotion requires $Credits > (CurrentYear \times 10)$.
 
-Broom Races: Competition based on broom speed and random student handling skills.
+### 🪄 The Magic Factory
+* **Wand & Broom Registry:** A centralized factory that prevents duplicate items using unique 3-letter IDs.
+* **Dynamic Items:** Brooms feature dynamic naming and speed attributes used in racing logic.
 
-The Magic Factory: A central registry for wands and brooms that prevents duplicate IDs.
+### 🎮 Game Mechanics
+* **Spell Duels:** A 3-round battle system calculating power based on:
+  $$(Difficulty + Mastery + Power)$$
+* **Broom Racing:** A competition simulation based on broom speed and randomized player handling.
 
-4. Technical Optimization: Bit-Level Compression
-To optimize memory, the Spell structure uses bit-packing to compress multiple attributes into a minimal byte footprint:
+---
 
-Difficulty: 2 bits (Easy, Medium, Hard).
+## 💾 Technical Highlight: Bit-Packing
+To minimize memory footprint, the **Spell** structure utilizes bit-packing to store multiple variables within just **2 Bytes**:
 
-Power: 6 bits (Max value 60).
+| Attribute | Bits | Logic / Range |
+| :--- | :---: | :--- |
+| **Difficulty** | 2 | Easy (00), Medium (01), Hard (11) |
+| **Power** | 6 | Calculated as $(MinYear \times 10)$ |
+| **Min Year** | 3 | Required level (Years 1-6) |
+| **Name Length** | 5 | Supports up to 31 characters |
 
-Year Requirement: 3 bits (Years 1-6).
+---
 
-Name Length: 5 bits (Supports up to 31 characters).
+## 📂 System Menu
+The system features a robust interactive menu with 13 management options:
+1.  **Print Hogwarts Status** – Overview of staff, houses, and courses.
+2.  **Inventory Check** – Detailed list of all wands and brooms.
+3.  **Add Wand** – Register a new wand with ID validation.
+4.  **Add Broom** – Register a new broom with speed attributes.
+5.  **Enroll Student** – Add student, select favorite wizard, and trigger Sorting Hat.
+6.  **Create Spell** – Add spells with "Dark Arts" validation (No *Avada Kedavra*).
+7.  **Add Course** – Define new courses and credit values (Max 3.0).
+8.  **Assign Course** – Add a course to a student's record and update credits.
+9.  **Sort House** – Sort students by Credits, ID, Name Length, or Year.
+10. **Find Student** – Search for students within a specific house.
+11. **Elect Head of House** – Automatically selects the student with the most credits.
+12. ⚔️ **Start Spell Duel** – Competitive 1v1 battle simulation.
+13. 🧹 **Start Broom Race** – Distance-based racing simulation.
 
-📂 Project Structure
-Wand: Year of manufacture and unique 3-letter ID.
+---
 
-Broom: Dynamic name allocation, speed, and competition history.
+## 🚀 Getting Started
 
-Spell: Compressed data structure for magical abilities.
+### Prerequisites
+* GCC Compiler or **Visual Studio 2022**
 
-Course: Credit system (0.0 - 3.0) and unique 5-digit ID.
-
-Student: Personal details, credits, and linked magical items.
-
-House: Dynamic array of pointers to students.
-
-Hogwarts: The central entity managing all arrays and global data.
-
-🚀 How to Run
-Clone the repository.
-
-Compile the source files using gcc or open the .sln file in Visual Studio.
-
-Run the executable and follow the on-screen menu (13 management options).
+### Installation & Compilation
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/YourUsername/Hogwarts-C-Project.git](https://github.com/YourUsername/Hogwarts-C-Project.git)
