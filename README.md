@@ -2,7 +2,7 @@
 ### *A memory-efficient C implementation of the Wizarding World*
 
 ![C](https://img.shields.io/badge/Language-C-blue.svg)
-![Status](https://img.shields.io/badge/Status-Final_School_Project-green.svg)
+![Status](https://img.shields.io/badge/Status-Final_C_Project-green.svg)
 ![Platform](https://img.shields.io/badge/Platform-Windows_/_Linux-lightgrey.svg)
 
 
