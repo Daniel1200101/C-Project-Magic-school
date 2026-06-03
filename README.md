@@ -63,9 +63,8 @@ The system features a robust interactive menu with 13 management options:
 ## 🚀 Getting Started
 
 ### Prerequisites
-* GCC Compiler or **Visual Studio 2022**
+* Any standard C compiler (e.g., GCC, Clang, MSVC)
+* A terminal environment (Linux Bash, Windows CMD/PowerShell)
 
 ### Installation & Compilation
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/YourUsername/Hogwarts-C-Project.git](https://github.com/YourUsername/Hogwarts-C-Project.git)
+gcc -o hogwarts_system main.c
